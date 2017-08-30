@@ -4,9 +4,11 @@ namespace FT.Log.Core
 {
     public interface ILogMessage
     {
-        string Message { get; }
+        string Body { get; }
 
         DateTime DateTime { get; }
+
+        LogLevel Level { get; }
 
         string GetRaw();
     }

@@ -1,4 +1,5 @@
 ﻿using FT.Log.Core.Source;
+using FT.Log.Core.Writer;
 using System;
 
 namespace FT.Log.Core
@@ -37,7 +38,7 @@ namespace FT.Log.Core
 
         public LogBuilder UseBodyConvert(Func<Object, string> func)
         {
-            Message.Message.Convert = func;
+            Message.Convert = func;
             return this;
         }
 
@@ -47,5 +48,8 @@ namespace FT.Log.Core
             Writer = writer;
             return this;
         }
+
+        public LogBuilder UseConsole() =>
+            UseWriter(new ConsoleLogWriter());
     }
 }
