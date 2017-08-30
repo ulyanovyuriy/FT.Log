@@ -1,29 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FT.Log.Core.Context
+namespace FT.Log.Core.Source
 {
     /// <summary>
     /// Переключаемый контекст логирования
     /// </summary>
-    public sealed class SwitchLogContext : ILogContext
+    public sealed class SwitchLogSource : ILogSource
     {
         /// <summary>
         /// список контекстов
         /// </summary>
-        private readonly SortedList<int, ILogContext> _list = new SortedList<int, ILogContext>();
+        private readonly SortedList<int, ILogSource> _list = new SortedList<int, ILogSource>();
 
         /// <summary>
         /// Список контекстов
         /// </summary>
-        public SortedList<int, ILogContext> List => _list;
+        public SortedList<int, ILogSource> List => _list;
 
         /// <summary>
         /// Добавить
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        public SwitchLogContext Add(ILogContext context, int priority)
+        public SwitchLogSource Add(ILogSource context, int priority)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             List.Add(priority, context);

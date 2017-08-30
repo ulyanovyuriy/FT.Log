@@ -3,7 +3,7 @@
     /// <summary>
     /// Контекст логирования
     /// </summary>
-    public interface ILogContext
+    public interface ILogSource
     {
         /// <summary>
         /// получить имя источник логирования

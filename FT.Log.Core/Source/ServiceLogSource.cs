@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FT.Log.Core.Context
+namespace FT.Log.Core.Source
 {
     /// <summary>
     /// Контекст логирования Службы
     /// </summary>
-    public class ServiceLogContext : ILogContext
+    public class ServiceLogSource : ILogSource
     {
         /// <summary>
         /// Получить имя источника
